@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACMS Senior Cadet Directory</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top App Navigation Bar -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <div class="brand-badge">ACMS</div>
+        <div>
+          <h1>Cadet & Senior Directory</h1>
+          <p>Army College of Medical Sciences • Digital Student Registry</p>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <div class="stat-badge" id="studentCounter">Loading directory...</div>
+        <!-- Dark Mode Toggle Button -->
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode" title="Toggle theme">
+          <span class="theme-icon light-icon">☀️</span>
+          <span class="theme-icon dark-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+    
+    <!-- Filter & Search Control Panel -->
+    <section class="control-panel">
+      <div class="search-box">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Search by student name, father's name, mobile number, or enrolment ID..." 
+          autocomplete="off"
+        />
+        <button id="clearSearch" class="clear-btn" title="Clear search">&times;</button>
+      </div>
+
+      <div class="filters-row">
+        <div class="filter-group">
+          <label for="batchFilter">Batch Filter</label>
+          <select id="batchFilter">
+            <option value="ALL">All Batches (2021 - 2025)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="stateFilter">Home State / UT</label>
+          <select id="stateFilter">
+            <option value="ALL">All States / UTs</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Student Cards Grid -->
+    <section class="grid-container" id="cardsGrid">
+      <!-- Dynamic Student Cards Rendered Here -->
+    </section>
+
+    <!-- Empty State -->
+    <div id="noResults" class="no-results hidden">
+      <div class="empty-icon">🔍</div>
+      <h3>No matching cadet profiles found</h3>
+      <p>Try modifying your search query or reset the state/batch filters.</p>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
